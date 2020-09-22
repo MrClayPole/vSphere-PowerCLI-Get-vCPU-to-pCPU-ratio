@@ -1,7 +1,7 @@
 param($vmhosts="*")
  
 $vmhosts=Get-VMHost $vmhosts
-$vms=Get-VM
+$vms=Get-VM | Where-Object {$_.powerstate -eq 'PoweredOn'}
  
 $Output=@()
  
